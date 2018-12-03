@@ -1,13 +1,13 @@
-pomelo-http-plugin
+pomelo-webserver-plugin
 ==================
 
 Wrap express module as pomelo http plugin.
 
 
 [wiki][]
-[wiki]: https://github.com/pipi32167/pomelo-http-plugin/wiki
+[wiki]: https://github.com/pipi32167/pomelo-webserver-plugin/wiki
 
-###How to use pomelo-http-plugin:
+###How to use pomelo-webserver-plugin:
 
 ###Single server
 
@@ -55,7 +55,7 @@ If you want to support https, you should add more keys to config/http.json
 ```
 #####4. Change app.js
 ```js
-var httpPlugin = require('pomelo-http-plugin');
+var httpPlugin = require('pomelo-webserver-plugin');
 var path = require('path');
 app.configure('development', 'gamehttp', function() {
   app.loadConfig('httpConfig', path.join(app.getBase(), 'config/http.json'));
@@ -124,7 +124,7 @@ If you want to support https, you should add more keys to config/http.json
 ```
 #####4. Change app.js
 ```js
-var httpPlugin = require('pomelo-http-plugin');
+var httpPlugin = require('pomelo-webserver-plugin');
 var path = require('path');
 
 app.configure('development', 'gamehttp', function() {
