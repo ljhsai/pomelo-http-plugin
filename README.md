@@ -3,17 +3,15 @@ pomelo-webserver-plugin
 
 Wrap express module as pomelo http plugin.
 
+[wiki]: https://github.com/ljhsai/pomelo-webserver-plugin/wiki
 
-[wiki][]
-[wiki]: https://github.com/pipi32167/pomelo-webserver-plugin/wiki
+### How to use pomelo-webserver-plugin:
 
-###How to use pomelo-webserver-plugin:
-
-###Single server
+### Single server
 
 For example, your http server name is gamehttp.
 
-#####1. Create config/http.json, configure your http server
+##### 1. Create config/http.json, configure your http server
 ```js
 {
   "development": {
@@ -38,7 +36,7 @@ If you want to support https, you should add more keys to config/http.json
   }
 }
 ```
-#####2. Change servers.json, add gamehttp config
+##### 2. Change servers.json, add gamehttp config
 ```js
 "gamehttp": [{
   "id": "gamehttp",
@@ -46,14 +44,14 @@ If you want to support https, you should add more keys to config/http.json
   "host": "127.0.0.1"
 }]
 ```
-#####3. Change adminServer.json, add server type config
+##### 3. Change adminServer.json, add server type config
 ```js
 {
   "type": "gamehttp",
   "token": "agarxhqb98rpajloaxn34ga8xrunpagkjwlaw3ruxnpaagl29w4rxn"
 }
 ```
-#####4. Change app.js
+##### 4. Change app.js
 ```js
 var httpPlugin = require('pomelo-webserver-plugin');
 var path = require('path');
@@ -64,7 +62,7 @@ app.configure('development', 'gamehttp', function() {
   });
 });
 ```
-#####5. Create app/servers/gamehttp/route/testRoute.js
+##### 5. Create app/servers/gamehttp/route/testRoute.js
 ```js
 module.exports = function(app, http) {
 
@@ -73,13 +71,13 @@ module.exports = function(app, http) {
   });
 };
 ```
-#####6. Run your app and open url http://127.0.0.1:3001/test
+##### 6. Run your app and open url http://127.0.0.1:3001/test
 
-###Server cluster
+### Server cluster
 
 This example, we configure our http server as a server cluster, just have a little difference with the before example.
 
-#####1. Create config/http.json, configure your http server
+##### 1. Create config/http.json, configure your http server
 ```js
 {
   "development": {
@@ -106,7 +104,7 @@ If you want to support https, you should add more keys to config/http.json
   }
 }
 ```
-#####2. Change servers.json, add gamehttp config
+##### 2. Change servers.json, add gamehttp config
 ```js
 "gamehttp": [{
   "id": "gamehttp",
@@ -115,14 +113,14 @@ If you want to support https, you should add more keys to config/http.json
   "host": "127.0.0.1"
 }]
 ```
-#####3. Change adminServer.json, add server type config
+##### 3. Change adminServer.json, add server type config
 ```js
 {
   "type": "gamehttp",
   "token": "agarxhqb98rpajloaxn34ga8xrunpagkjwlaw3ruxnpaagl29w4rxn"
 }
 ```
-#####4. Change app.js
+##### 4. Change app.js
 ```js
 var httpPlugin = require('pomelo-webserver-plugin');
 var path = require('path');
@@ -134,7 +132,7 @@ app.configure('development', 'gamehttp', function() {
   });
 });
 ```
-#####5. Create app/servers/gamehttp/route/testRoute.js
+##### 5. Create app/servers/gamehttp/route/testRoute.js
 ```js
 module.exports = function(app, http) {
 
@@ -143,8 +141,8 @@ module.exports = function(app, http) {
   });
 };
 ```
-#####6. Run your app and open urls: http://127.0.0.1:3001/test, http://127.0.0.1:3002/test
-#####7. Optional, you can use nginx or any other similar program to reverse proxy the http port, just google it!
+##### 6. Run your app and open urls: http://127.0.0.1:3001/test, http://127.0.0.1:3002/test
+##### 7. Optional, you can use nginx or any other similar program to reverse proxy the http port, just google it!
 
 
 ## License
